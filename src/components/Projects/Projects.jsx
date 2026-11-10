@@ -7,7 +7,6 @@ import "./Projects.css";
 import novaSaludImg from "../../assets/Projects/NovaSalud.png";
 import artFoodImg from "../../assets/Projects/ArtFood-Anychat.png";
 import arduinoImg from "../../assets/Projects/Arduino-Sensor.png";
-import restauranteImg from "../../assets/Projects/restaurante.png";
 
 const projects = [
   {
@@ -49,7 +48,6 @@ const projects = [
     title: "Sitio web para restaurante",
     description:
       "Página web de restaurante con estructura de contenido, presentación de platos y diseño adaptable.",
-    image: restauranteImg,
     technologies: ["HTML", "CSS", "Bootstrap"],
     demoUrl: "",
     videoUrl: "",
