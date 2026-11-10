@@ -3,24 +3,32 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import "./Projects.css";
 
+// Imágenes de los proyectos
+import novaSaludImg from "../../assets/Projects/NovaSalud.png";
+import artFoodImg from "../../assets/Projects/ArtFood-Anychat.png";
+import arduinoImg from "../../assets/Projects/Arduino-Sensor.png";
+import restauranteImg from "../../assets/Projects/restaurante.png";
+
 const projects = [
   {
     title: "Software web de gestión de inventario y venta de una botica",
     description:
       "Sistema web para administrar el inventario, las ventas y las compras de una botica, con alertas de stock y vencimiento.",
-    image: "../src/assets/Projects/NovaSalud.png",
+    image: novaSaludImg,
     technologies: ["React", "Node.js", "Express", "MongoDB"],
     demoUrl: "https://nova-salud-sigma.vercel.app/",
-    videoUrl: "https://drive.google.com/file/d/1eZf4wnDnm7cRLrYqKLEkTQMyOc_6GKhD/view?usp=sharing",
+    videoUrl:
+      "https://drive.google.com/file/d/1eZf4wnDnm7cRLrYqKLEkTQMyOc_6GKhD/view?usp=sharing",
     githubUrl: "",
   },
   {
     title: "Chatbot de atención al cliente",
     description:
       "Asistente automatizado para responder consultas sobre servicios, recopilar datos y gestionar solicitudes de citas.",
-    image: "../src/assets/Projects/ArtFood-Anychat.png",
+    image: artFoodImg,
     technologies: ["AnyChat", "Gemini"],
-    demoUrl: "https://drive.google.com/file/d/1NU96yhFLKSCyLkUySIMQrSNVPtL1dgVx/view?usp=sharing",
+    demoUrl:
+      "https://drive.google.com/file/d/1NU96yhFLKSCyLkUySIMQrSNVPtL1dgVx/view?usp=sharing",
     videoUrl:
       "https://drive.google.com/file/d/1fL2SmdyYLvA5-wJYIYROaUfKemCw8ErB/view?usp=sharing",
     githubUrl: "https://github.com/KevinM-12/ArtFood-Chatbot",
@@ -29,17 +37,19 @@ const projects = [
     title: "Sistema de seguridad con Arduino",
     description:
       "Sistema de seguridad que utiliza un sensor de movimiento, teclado y contraseña para activar una alarma.",
-    image: "../src/assets/Projects/Arduino-Sensor.png",
+    image: arduinoImg,
     technologies: ["Arduino", "C++", "LCD", "Sensor PIR"],
-    demoUrl: "https://www.tinkercad.com/things/6doyxgw3zOK-mighty-lappi?sharecode=kOAR6LXo4Dl0_-gdQPUIg6c7Kgxi4pjbX2MNSLjZNCk",
-    videoUrl: "https://drive.google.com/file/d/1zMmbfas8JMl00Zl3JVsgGxGeVN1RuAOb/view?usp=sharing",
+    demoUrl:
+      "https://www.tinkercad.com/things/6doyxgw3zOK-mighty-lappi?sharecode=kOAR6LXo4Dl0_-gdQPUIg6c7Kgxi4pjbX2MNSLjZNCk",
+    videoUrl:
+      "https://drive.google.com/file/d/1zMmbfas8JMl00Zl3JVsgGxGeVN1RuAOb/view?usp=sharing",
     githubUrl: "",
   },
   {
     title: "Sitio web para restaurante",
     description:
       "Página web de restaurante con estructura de contenido, presentación de platos y diseño adaptable.",
-    image: "/projects/restaurante.png",
+    image: restauranteImg,
     technologies: ["HTML", "CSS", "Bootstrap"],
     demoUrl: "",
     videoUrl: "",
