@@ -1,0 +1,291 @@
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 70px 24px 25px;
+}
+
+.hero__container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* CONTENIDO */
+
+.hero__content {
+  max-width: 680px;
+}
+
+.hero__eyebrow {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.hero__eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 42px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin-right: 16px;
+  vertical-align: middle;
+}
+
+.hero__title {
+  color: var(--color-text);
+  font-size: clamp(2.8rem, 5.2vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 750;
+  margin-bottom: 28px;
+}
+
+.hero__title span {
+  display: block;
+  color: var(--color-accent);
+}
+
+.hero__description {
+  max-width: 650px;
+  color: var(--color-muted);
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin-bottom: 34px;
+}
+
+/* BOTONES */
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero__button {
+  min-height: 52px;
+  padding: 0 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hero__button--primary {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+.hero__button--primary:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+.hero__button--secondary {
+  color: var(--color-accent);
+  background-color: transparent;
+}
+
+.hero__button--secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+/* FOTOGRAFÍA CIRCULAR */
+
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  border-radius: 50%;
+  background: #B6B5C5;
+
+  /* Separación respecto al fondo */
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.25),
+    0 0 0 8px rgba(182, 181, 197, 0.08);
+
+  overflow: hidden;
+}
+
+.hero__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  border-radius: 50%;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .hero__container {
+    grid-template-columns: 1fr 0.75fr;
+    gap: 35px;
+  }
+
+  .hero__photo-frame {
+    max-width: 340px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 6vw, 3.6rem);
+  }
+
+  .hero__description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+    padding: 65px 24px 80px;
+  }
+
+  .hero__container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__title {
+    font-size: clamp(2.6rem, 10vw, 3.5rem);
+  }
+
+  .hero__description {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .hero__visual {
+    max-width: 320px;
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+/* ================================
+   ANIMACIÓN DE ENTRADA DEL HERO
+================================ */
+
+/* Expansión general del contenido */
+
+.hero__content {
+  animation: hero-expand 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Entrada progresiva de los elementos */
+
+.hero__eyebrow {
+  animation: hero-item-in 750ms ease 150ms both;
+}
+
+.hero__title {
+  animation: hero-item-in 850ms ease 250ms both;
+}
+
+.hero__description {
+  animation: hero-item-in 850ms ease 400ms both;
+}
+
+.hero__actions {
+  animation: hero-item-in 850ms ease 550ms both;
+}
+
+/* Entrada de la fotografía */
+
+.hero__visual {
+  animation: hero-expand 1000ms cubic-bezier(0.22, 1, 0.36, 1) 200ms both;
+}
+
+/* Movimientos */
+
+@keyframes hero-expand {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__content,
+  .hero__visual,
+  .hero__content > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero__eyebrow {
+    font-size: 0.78rem;
+  }
+
+  .hero__eyebrow::before {
+    width: 24px;
+    margin-right: 9px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__button {
+    width: 100%;
+  }
+}

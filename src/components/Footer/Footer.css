@@ -1,0 +1,195 @@
+.footer {
+  width: 100%;
+  padding: 65px 24px 28px;
+  background-color: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease;
+}
+
+.footer__container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Primera fila */
+
+.footer__main {
+  display: grid;
+  grid-template-columns: 1.1fr 0.7fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 190px;
+  padding-bottom: 45px;
+}
+
+.footer__name {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--color-text);
+  font-size: 1.55rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer__name span {
+  color: var(--color-accent);
+}
+
+.footer__intro h3,
+.footer__navigation h3 {
+  margin-bottom: 13px;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer__intro p {
+  max-width: 310px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.footer__navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.footer__navigation a {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__navigation a:hover {
+  color: var(--color-accent);
+}
+
+/* Espacio reservado para Vals */
+
+.footer__mascot {
+  min-height: 170px;
+  width: 100%;
+}
+
+/* Segunda fila */
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding-top: 25px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer__socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__socials a:hover {
+  color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.footer__socials svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer__socials svg path,
+.footer__socials svg rect {
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer__credits {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  text-align: right;
+}
+
+.footer__credits p,
+.footer__credits span {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+
+@media (max-width: 750px) {
+  .footer__main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer__mascot {
+    grid-column: 1 / -1;
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 550px) {
+  .footer {
+    padding: 50px 20px 25px;
+  }
+
+  .footer__main {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-bottom: 30px;
+  }
+
+  .footer__mascot {
+    min-height: 60px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer__credits {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.footer__mascot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 0;
+}
+
+.footer__mascot img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
