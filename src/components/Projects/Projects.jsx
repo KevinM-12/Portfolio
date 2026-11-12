@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import "./Projects.css";
 
 // Imágenes de los proyectos
+import PortafolioImg from "../../assets/Projects/Portafolio.png";
 import novaSaludImg from "../../assets/Projects/NovaSalud.png";
 import artFoodImg from "../../assets/Projects/ArtFood-Anychat.png";
 import arduinoImg from "../../assets/Projects/Arduino-Sensor.png";
@@ -48,6 +49,7 @@ const projects = [
     title: "Portafolio",
     description:
       "Portafolio personal, preparado para un uso profesional",
+    image: PortafolioImg,
     technologies: ["HTML", "CSS", "Bootstrap"],
     demoUrl: "https://portafolio-eta-six-11.vercel.app/",
     videoUrl: "",
