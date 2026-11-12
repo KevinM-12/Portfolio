@@ -45,13 +45,13 @@ const projects = [
     githubUrl: "",
   },
   {
-    title: "Sitio web para restaurante",
+    title: "Portafolio",
     description:
-      "Página web de restaurante con estructura de contenido, presentación de platos y diseño adaptable.",
+      "Portafolio personal, preparado para un uso profesional",
     technologies: ["HTML", "CSS", "Bootstrap"],
-    demoUrl: "",
+    demoUrl: "https://portafolio-eta-six-11.vercel.app/",
     videoUrl: "",
-    githubUrl: "",
+    githubUrl: "https://github.com/KevinM-12/portafolio",
   },
 ];
 
